@@ -1,6 +1,12 @@
+// Functions
+
 const fetchProducts = async () => {
   const response = await fetch(url);
   ({ nextPage, products } = await response.json());
+
+  [product1, product2] = products;
+  fakeEmailProductsList.push(product1, product2);
+
   products.forEach((product) => {
     productList.push(
       `<li class="index-main__card">
@@ -34,11 +40,45 @@ const fetchProducts = async () => {
   url = "https://" + nextPage;
 };
 
+const sendEmail = (event) => {
+  event.preventDefault();
+  if (event.target.classList.contains("index-footer__form")) {
+    const name = document.querySelector("#footer-newsletter-name").value;
+    const stringfyCutumer = JSON.stringify({
+      name,
+      products: ([product1, product2] = fakeEmailProductsList),
+    });
+    localStorage.setItem("custumer", stringfyCutumer);
+    window.location.href = "/email.html";
+  } else if (event.target.classList.contains("index-main__form")) {
+    const name = document.querySelector("#main-form__name").value;
+    const stringfyCutumer = JSON.stringify({
+      name,
+      products: ([product1, product2] = fakeEmailProductsList),
+    });
+    localStorage.setItem("custumer", stringfyCutumer);
+    window.location.href = "/email.html";
+  }
+};
+
+// Variables
+
 let url =
   "https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=1";
 const productList = [];
+const fakeEmailProductsList = [];
+
+// Events
+
 window.addEventListener("load", fetchProducts);
 
 document
   .querySelector(".index-main__more-products")
   .addEventListener("click", fetchProducts);
+
+document
+  .querySelector(".index-footer__form")
+  .addEventListener("submit", sendEmail);
+document
+  .querySelector(".index-main__form")
+  .addEventListener("submit", sendEmail);
