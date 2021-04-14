@@ -10,10 +10,16 @@ body {
 
 /* Header title Style */
 
-.index-header {
-  background: #707070 0% 0% no-repeat padding-box;
-  height: 400px;
+.index-header__polygon-container {
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 65%);
+  background: #707070;
+  height: 400px;
+}
+
+.index-header__header--items-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .index-header__titles {
@@ -36,8 +42,6 @@ body {
   margin-top: 20px;
 }
 
-/* Header title buttons */
-
 .index-buttons__container {
   width: 100%;
   display: flex;
@@ -50,7 +54,8 @@ body {
   box-shadow: 0px 1px 6px #00000029;
   border: 1px solid #707070;
   border-radius: 4px;
-  padding: 12px 31px;
+  width: 160px;
+  height: 40px;
   color: #888888;
   margin-left: 30px;
   cursor: pointer;
@@ -151,6 +156,7 @@ body {
 }
 .index-main__hr::after {
   content: "Sua Lista Especial";
+  font-weight: bold;
   font-size: 1.2rem;
   position: relative;
   display: inline-block;
@@ -180,6 +186,11 @@ body {
   width: 200px;
   height: 150px;
   border: 1px solid #707070;
+}
+
+.index-main__product-info {
+  display: flex;
+  flex-direction: column;
 }
 
 .index-main__product-name {
@@ -264,6 +275,7 @@ body {
 }
 .index-footer__hr::after {
   content: "Compartilhe a novidade";
+  font-weight: bold;
   font-size: 1.2rem;
   position: relative;
   display: inline-block;
@@ -323,4 +335,150 @@ body {
   color: #fff;
   padding-top: 150px;
   font-size: 12px;
+}
+
+/* First end-point */
+
+@media only screen and (max-width: 1016px) {
+  .index-main__products-list {
+    display: grid;
+    grid-template-columns: repeat(2, 400px);
+    grid-template-rows: repeat(4, auto);
+    justify-items: center;
+    gap: 50px;
+  }
+}
+
+/* Second end-point */
+
+@media only screen and (max-width: 804px) {
+  /* Header queries */
+  .index-buttons__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+    text-align: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .index-buttons__container > button {
+    background-color: #fff;
+    box-shadow: 0px 1px 6px #00000029;
+    border: 1px solid #707070;
+    border-radius: 4px;
+    width: 160px;
+    height: 40px;
+    margin-left: 0;
+    color: #888888;
+    cursor: pointer;
+  }
+}
+
+/* Third end-point */
+
+@media only screen and (max-width: 724px) {
+  /* Header queries */
+  .index-header__titles {
+    max-width: 358px;
+    margin: auto;
+    text-align: left;
+    padding: 10px;
+  }
+  .index-header__second-description {
+    font-size: 36px;
+  }
+
+  /* Main queries */
+  .index-main__form-section {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .index-main__text-container {
+    margin-right: 0;
+    max-width: 386px;
+    padding: 10px;
+  }
+  .index-main__products-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .index-main__card {
+    display: flex;
+    flex-direction: row;
+    max-width: 200px;
+    margin-top: 50px;
+    margin-left: -180px;
+  }
+  .index-main__image {
+    width: 250px;
+    height: 160px;
+    border: 1px solid #707070;
+  }
+
+  .index-main__product-info {
+    margin-left: 20px;
+  }
+
+  .index-main__product-name {
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0px 0 5px 0;
+  }
+
+  /* Footer queries */
+
+  .index-footer__form--input-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .index-footer__form-module:nth-child(2) {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .index-main__text-container {
+    max-width: 350px;
+  }
+
+  /* Main queries */
+  .index-main__products-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+  }
+  .index-main__card {
+    display: flex;
+    flex-direction: row;
+    max-width: 200px;
+    margin-top: 50px;
+    margin-left: -150px;
+  }
+  .index-main__product-info {
+    margin-left: 5px;
+  }
+
+  .index-main__image {
+    width: 169px;
+    height: 129px;
+    border: 1px solid #707070;
+  }
+  .index-main__product-name {
+    width: 200px;
+    margin-bottom: 23px;
+  }
+  .index-main__product-description {
+    display: none;
+  }
 }
