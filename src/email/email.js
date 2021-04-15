@@ -1,5 +1,5 @@
-const htmlProducts = [];
 window.addEventListener("load", () => {
+  const htmlProducts = [];
   const { name, products } = JSON.parse(localStorage.getItem("custumer"));
   document.querySelector(
     ".email-main-custumer--name"

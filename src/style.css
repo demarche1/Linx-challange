@@ -8,6 +8,14 @@ body {
   color: #888888;
 }
 
+/* Error style */
+.error {
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 5px;
+  color: red;
+}
+
 /* Header title Style */
 
 .index-header__polygon-container {
