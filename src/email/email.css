@@ -150,11 +150,10 @@ body {
   clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
   background-color: #707070;
   height: 159px;
+  padding-top: 70px;
 }
 
 .email-footer__description {
-  position: absolute;
-  bottom: -50px;
   color: #fff;
   text-align: center;
   display: flex;

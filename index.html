@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/style.css" />
+    <script src="./src/index.js" defer></script>
+    <script src="./src/customValidation.js" defer></script>
     <title>Teste Linx</title>
   </head>
   <body>
@@ -58,23 +60,28 @@
           <div class="index-main__form-module">
             <label for="main-form__name">Seu nome:</label>
             <input type="text" name="name" id="main-form__name" required />
+            <span class="error"></span>
           </div>
           <div class="index-main__form-module">
             <label for="main-form__email">E-mail:</label>
             <input type="email" name="name" id="main-form__email" required />
+            <span class="error"></span>
           </div>
           <div class="index-main__form-module">
             <label for="main-form__cpf">CPF:</label>
             <input type="text" name="name" id="main-form__cpf" required />
+            <span class="error"></span>
           </div>
           <div class="genders">
             <div>
               <label for="masc">Masculino</label>
               <input type="radio" name="male" id="male" value="male" checked />
+              <span class="error"></span>
             </div>
             <div>
               <label for="fem">Feminino</label>
               <input type="radio" name="fem" id="fem" value="fem" />
+              <span class="error"></span>
             </div>
           </div>
           <button class="index-main__form-button">Enviar</button>
@@ -107,6 +114,7 @@
                 name="name"
                 required
               />
+              <span class="error"></span>
             </div>
             <div class="index-footer__form-module">
               <label for="footer-newsletter-email">E-mail:</label>
@@ -116,6 +124,7 @@
                 type="email"
                 required
               />
+              <span class="error"></span>
             </div>
           </div>
           <div class="index-footer__form-button--container">
@@ -131,6 +140,5 @@
         </div>
       </div>
     </footer>
-    <script src="./src/index.js"></script>
   </body>
 </html>
